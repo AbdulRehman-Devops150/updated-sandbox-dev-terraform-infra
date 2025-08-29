@@ -40,11 +40,11 @@ locals {
 module "vpc" {
   source = "../../modules/vpc"
 
-  environment            = local.environment
-  vpc_cidr              = local.vpc_cidr
-  public_subnet_cidrs   = local.public_subnet_cidrs
-  private_subnet_cidrs  = local.private_subnet_cidrs
-  availability_zones    = local.availability_zones
+  environment         = local.environment
+  vpc_cidr           = local.vpc_cidr
+  public_subnet_cidrs = local.public_subnet_cidrs
+  private_subnet_cidrs = local.private_subnet_cidrs
+  availability_zones  = local.availability_zones
 }
 
 # Security Groups Module
@@ -63,7 +63,7 @@ module "alb" {
   vpc_id               = module.vpc.vpc_id
   public_subnet_ids    = module.vpc.public_subnet_ids
   alb_security_group_id = module.security_groups.alb_security_group_id
-  ssl_certificate_arn  = local.ssl_certificate_arn
+  ssl_certificate_arn   = local.ssl_certificate_arn
 }
 
 # ECS Module
