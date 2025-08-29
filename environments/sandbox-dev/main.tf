@@ -16,10 +16,10 @@ provider "aws" {
 locals {
   environment = "sandbox-dev"
   region      = "us-east-1"
-  
+
   # VPC Configuration
   vpc_cidr = "10.0.0.0/16"
-  
+
   # Subnet Configuration
   availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
   public_subnet_cidrs = [
@@ -32,7 +32,7 @@ locals {
     "10.0.12.0/24",
     "10.0.13.0/24"
   ]
-  
+
   # SSL Certificate ARN - Replace YOUR_ACCOUNT_ID with your actual AWS account ID
   ssl_certificate_arn = "arn:aws:acm:us-east-1:YOUR_ACCOUNT_ID:certificate/9b6d5d06-013a-4626-be5f-48d1d19df00a"
 }
