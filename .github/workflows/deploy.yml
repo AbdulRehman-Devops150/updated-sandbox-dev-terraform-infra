@@ -45,6 +45,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Debug - List directory structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Repository structure:"
+          find . -type d -name "*" | head -20
+          echo "Looking for Terraform directory:"
+          ls -la environments/ || echo "environments directory not found"
+          ls -la environments/sandbox-dev/ || echo "sandbox-dev directory not found"
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
