@@ -81,8 +81,9 @@ jobs:
           terraform init "${ARGS[@]}"
 
       - name: Terraform Format Check
-        working-directory: ${{ env.TERRAFORM_DIR }}
-        run: terraform fmt -check -recursive
+        run: |
+          terraform fmt -check -recursive modules/
+          terraform fmt -check -recursive environments/
 
       - name: Terraform Validate
         working-directory: ${{ env.TERRAFORM_DIR }}
