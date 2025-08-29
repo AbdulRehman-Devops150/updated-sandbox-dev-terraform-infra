@@ -1,4 +1,3 @@
-
 terraform {
   backend "s3" {
     bucket = "sandbox-dev-infra-tfstate-files"
