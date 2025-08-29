@@ -1,4 +1,3 @@
-
 # Security Group for ALB
 resource "aws_security_group" "alb" {
   name        = "${var.environment}-alb-sg"
